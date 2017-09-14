@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Control_Fun" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apress_logo" translatesAutoresizingMaskIntoConstraints="NO" id="26r-FW-PBU">
+                                <rect key="frame" x="101.5" y="80" width="172" height="80"/>
+                            </imageView>
+                            <textField clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type in a name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r8v-W0-idi">
+                                <rect key="frame" x="91" y="220" width="268" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="textFieldDoneEditing:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="GOM-V5-mBw"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8h-fe-Cdv">
+                                <rect key="frame" x="16" y="223" width="67" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type in a number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sBL-bE-dyT">
+                                <rect key="frame" x="91" y="310" width="268" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="textFieldDoneEditing:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="nfZ-EY-d8Q"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1v0-Pb-3ej">
+                                <rect key="frame" x="16" y="313" width="67" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="1" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="1fO-hH-ToS">
+                                <rect key="frame" x="52" y="400" width="309" height="31"/>
+                                <connections>
+                                    <action selector="onSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="FHE-qu-TKi"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ld3-NT-BgI">
+                                <rect key="frame" x="16" y="404.5" width="30" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="9bi-YT-9cu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="1v0-Pb-3ej" firstAttribute="width" secondItem="c8h-fe-Cdv" secondAttribute="width" id="0L8-18-68d"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="r8v-W0-idi" secondAttribute="trailing" constant="16" id="3ma-ZM-a83"/>
+                            <constraint firstItem="1v0-Pb-3ej" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="BAe-Os-DlC"/>
+                            <constraint firstItem="r8v-W0-idi" firstAttribute="baseline" secondItem="c8h-fe-Cdv" secondAttribute="baseline" id="DCK-uw-B54"/>
+                            <constraint firstItem="Ld3-NT-BgI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="E1a-2O-T6i"/>
+                            <constraint firstItem="sBL-bE-dyT" firstAttribute="top" secondItem="r8v-W0-idi" secondAttribute="bottom" constant="60" id="PvT-Gk-CPd"/>
+                            <constraint firstItem="1fO-hH-ToS" firstAttribute="centerY" secondItem="Ld3-NT-BgI" secondAttribute="centerY" id="WFj-3H-IoJ"/>
+                            <constraint firstItem="26r-FW-PBU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xx0-Jz-cMe"/>
+                            <constraint firstItem="c8h-fe-Cdv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ZY0-xH-iVi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sBL-bE-dyT" secondAttribute="trailing" constant="16" id="awc-jG-33M"/>
+                            <constraint firstItem="26r-FW-PBU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fqx-U4-v6j"/>
+                            <constraint firstItem="sBL-bE-dyT" firstAttribute="leading" secondItem="1v0-Pb-3ej" secondAttribute="trailing" constant="8" id="fxq-5A-Gd0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1fO-hH-ToS" secondAttribute="trailing" constant="16" id="hcU-KM-mzs"/>
+                            <constraint firstItem="sBL-bE-dyT" firstAttribute="baseline" secondItem="1v0-Pb-3ej" secondAttribute="baseline" id="iGq-j9-rDq"/>
+                            <constraint firstItem="r8v-W0-idi" firstAttribute="top" secondItem="26r-FW-PBU" secondAttribute="bottom" constant="60" id="iKF-KU-ftO"/>
+                            <constraint firstItem="1fO-hH-ToS" firstAttribute="leading" secondItem="Ld3-NT-BgI" secondAttribute="trailing" constant="8" id="kAj-2d-oZc"/>
+                            <constraint firstItem="1fO-hH-ToS" firstAttribute="top" secondItem="sBL-bE-dyT" secondAttribute="bottom" constant="60" id="nSy-un-bkp"/>
+                            <constraint firstItem="26r-FW-PBU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="tWX-sH-CD3"/>
+                            <constraint firstItem="r8v-W0-idi" firstAttribute="leading" secondItem="c8h-fe-Cdv" secondAttribute="trailing" constant="8" id="yQW-23-ngc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="S81-NT-QBD" appends="YES" id="ANl-GG-oEV"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="nameField" destination="r8v-W0-idi" id="VCc-Ui-bb2"/>
+                        <outlet property="numberField" destination="sBL-bE-dyT" id="j6z-3y-zl4"/>
+                        <outlet property="sliderLabel" destination="Ld3-NT-BgI" id="SKQ-ky-olj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="S81-NT-QBD">
+                    <connections>
+                        <action selector="onTapGestureRecognized:" destination="BYZ-38-t0r" id="cQv-U8-NSH"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="apress_logo" width="172" height="80"/>
+    </resources>
+</document>
