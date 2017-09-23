@@ -57,10 +57,44 @@
                     <view key="view" contentMode="scaleToFill" id="Azl-d3-SVu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQI-Qo-HSb">
+                                <rect key="frame" x="172.5" y="393.5" width="31" height="30"/>
+                                <state key="normal" title="Spin"/>
+                                <connections>
+                                    <action selector="spin:" destination="OQD-fx-Ugy" eventType="touchUpInside" id="Bq7-f6-goc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCu-sP-shG">
+                                <rect key="frame" x="132" y="276" width="112.5" height="57.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="klz-Jx-rtb">
+                                <rect key="frame" x="27.5" y="0.0" width="320" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="OQD-fx-Ugy" id="O9h-pp-FPJ"/>
+                                    <outlet property="delegate" destination="OQD-fx-Ugy" id="uEN-cT-yeq"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lQI-Qo-HSb" firstAttribute="top" secondItem="gCu-sP-shG" secondAttribute="bottom" constant="60" id="Jd9-UG-VoL"/>
+                            <constraint firstItem="lQI-Qo-HSb" firstAttribute="centerX" secondItem="Azl-d3-SVu" secondAttribute="centerX" id="ams-be-3DA"/>
+                            <constraint firstItem="klz-Jx-rtb" firstAttribute="centerX" secondItem="Azl-d3-SVu" secondAttribute="centerX" id="bQK-Df-tpy"/>
+                            <constraint firstItem="klz-Jx-rtb" firstAttribute="top" secondItem="Azl-d3-SVu" secondAttribute="top" id="duQ-3O-K2y"/>
+                            <constraint firstItem="gCu-sP-shG" firstAttribute="centerX" secondItem="Azl-d3-SVu" secondAttribute="centerX" id="iDb-XU-SLa"/>
+                            <constraint firstItem="gCu-sP-shG" firstAttribute="top" secondItem="klz-Jx-rtb" secondAttribute="bottom" constant="60" id="vTZ-WP-dqc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="HRU-a3-5Lv"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Custom" image="toolicon" id="BGm-Ai-Zt2"/>
+                    <connections>
+                        <outlet property="picker" destination="klz-Jx-rtb" id="gpN-dx-hmc"/>
+                        <outlet property="winLabel" destination="gCu-sP-shG" id="pCA-O5-VgH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ugy-gX-Lh4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
