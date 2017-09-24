@@ -46,3 +46,23 @@ extension ViewController: UITableViewDataSource {
         return cell!
     }
 }
+
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, indentationLevelForRowAt indexPath: IndexPath) -> Int {
+        return indexPath.row % 4
+    }
+    
+    // return nil to prevent selecting the specific row
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return indexPath.row == 0 ? nil : indexPath
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let rowVal = dwarves[indexPath.row]
+        let message = "You selected \(rowVal)"
+        let alert = UIAlertController(title: "Row Selected", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Yes, I Did", style: .default, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+}
