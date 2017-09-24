@@ -36,6 +36,12 @@ extension ViewController: UITableViewDataSource {
         if (cell == nil) {
             cell = UITableViewCell(style: .default, reuseIdentifier: simpleTableIdentifier)
         }
+        
+        let image = UIImage(named: "star")
+        cell?.imageView?.image = image
+        let highlightedImage = UIImage(named: "star2")
+        cell?.imageView?.highlightedImage = highlightedImage
+        
         cell?.textLabel?.text = dwarves[indexPath.row]
         return cell!
     }
