@@ -13,6 +13,7 @@
 		B64D59CA1F77CF65002BE3DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B64D59C91F77CF65002BE3DC /* Assets.xcassets */; };
 		B64D59CD1F77CF65002BE3DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B64D59CB1F77CF65002BE3DC /* LaunchScreen.storyboard */; };
 		B64D59D51F77D26A002BE3DC /* NameAndColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64D59D41F77D26A002BE3DC /* NameAndColorCell.swift */; };
+		B64D59D71F780B7E002BE3DC /* NameAndColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B64D59D61F780B7D002BE3DC /* NameAndColorCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		B64D59CC1F77CF65002BE3DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B64D59CE1F77CF65002BE3DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B64D59D41F77D26A002BE3DC /* NameAndColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameAndColorCell.swift; sourceTree = "<group>"; };
+		B64D59D61F780B7D002BE3DC /* NameAndColorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NameAndColorCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				B64D59C91F77CF65002BE3DC /* Assets.xcassets */,
 				B64D59CB1F77CF65002BE3DC /* LaunchScreen.storyboard */,
 				B64D59CE1F77CF65002BE3DC /* Info.plist */,
+				B64D59D61F780B7D002BE3DC /* NameAndColorCell.xib */,
 			);
 			path = "Table Cells";
 			sourceTree = "<group>";
@@ -126,6 +129,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B64D59D71F780B7E002BE3DC /* NameAndColorCell.xib in Resources */,
 				B64D59CD1F77CF65002BE3DC /* LaunchScreen.storyboard in Resources */,
 				B64D59CA1F77CF65002BE3DC /* Assets.xcassets in Resources */,
 				B64D59C81F77CF65002BE3DC /* Main.storyboard in Resources */,
