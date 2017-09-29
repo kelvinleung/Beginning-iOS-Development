@@ -13,6 +13,9 @@
 		B6498C221F7D3154002DB72E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6498C201F7D3154002DB72E /* LaunchScreen.storyboard */; };
 		B6498C2A1F7D3E1F002DB72E /* FavoritesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6498C291F7D3E1F002DB72E /* FavoritesList.swift */; };
 		B6498C2C1F7D46AC002DB72E /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6498C2B1F7D46AC002DB72E /* RootViewController.swift */; };
+		B6498C2E1F7DDEE4002DB72E /* FontListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6498C2D1F7DDEE4002DB72E /* FontListViewController.swift */; };
+		B6498C301F7DFAEE002DB72E /* FontSizesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6498C2F1F7DFAED002DB72E /* FontSizesViewController.swift */; };
+		B6498C321F7E2A15002DB72E /* FontInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6498C311F7E2A15002DB72E /* FontInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		B6498C231F7D3154002DB72E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6498C291F7D3E1F002DB72E /* FavoritesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesList.swift; sourceTree = "<group>"; };
 		B6498C2B1F7D46AC002DB72E /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		B6498C2D1F7DDEE4002DB72E /* FontListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontListViewController.swift; sourceTree = "<group>"; };
+		B6498C2F1F7DFAED002DB72E /* FontSizesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSizesViewController.swift; sourceTree = "<group>"; };
+		B6498C311F7E2A15002DB72E /* FontInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,9 @@
 				B6498C231F7D3154002DB72E /* Info.plist */,
 				B6498C291F7D3E1F002DB72E /* FavoritesList.swift */,
 				B6498C2B1F7D46AC002DB72E /* RootViewController.swift */,
+				B6498C2D1F7DDEE4002DB72E /* FontListViewController.swift */,
+				B6498C2F1F7DFAED002DB72E /* FontSizesViewController.swift */,
+				B6498C311F7E2A15002DB72E /* FontInfoViewController.swift */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -139,7 +148,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6498C301F7DFAEE002DB72E /* FontSizesViewController.swift in Sources */,
 				B6498C181F7D3154002DB72E /* AppDelegate.swift in Sources */,
+				B6498C2E1F7DDEE4002DB72E /* FontListViewController.swift in Sources */,
+				B6498C321F7E2A15002DB72E /* FontInfoViewController.swift in Sources */,
 				B6498C2A1F7D3E1F002DB72E /* FavoritesList.swift in Sources */,
 				B6498C2C1F7D46AC002DB72E /* RootViewController.swift in Sources */,
 			);
