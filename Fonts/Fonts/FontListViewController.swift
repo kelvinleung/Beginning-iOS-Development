@@ -68,4 +68,16 @@ extension FontListViewController {
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return showsFavorites
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        let favorite = fontNames[indexPath.row]
+        FavoritesList.sharedFavoritesList.removeFavorite(fontName: favorite)
+        fontNames = FavoritesList.sharedFavoritesList.favorites
+        tableView.deleteRows(at: [indexPath], with: .fade)
+    }
+    
 }
