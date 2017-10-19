@@ -48,17 +48,32 @@ class ViewController: UIViewController {
         queue.async {
             let fetchedData = self.fetchSomethingFromServer()
             let processedData = self.processData(fetchedData)
-            let firstResult = self.calculateFirstResult(processedData)
-            let secondResult = self.calculateSecondResult(processedData)
-            let resultsSummary = "First: [\(firstResult)]\nSecond: [\(secondResult)]"
-            // UI must be used from main thread only
-            DispatchQueue.main.async {
-                self.resultsTextView.text = resultsSummary
-                self.startButton.isEnabled = true
-                self.spinner.stopAnimating()
+            
+            // Dispatch group
+            var firstResult: String!
+            var secondResult: String!
+            let group = DispatchGroup()
+            
+            // Concurrent closures
+            queue.async(group: group) {
+                firstResult = self.calculateFirstResult(processedData)
             }
-            let endTime = Date()
-            print("Completed in \(endTime.timeIntervalSince(startTime)) seconds")
+            queue.async(group: group) {
+                secondResult = self.calculateSecondResult(processedData)
+            }
+            
+            // All completed
+            group.notify(queue: queue) {
+                let resultsSummary = "First: [\(firstResult!)]\nSecond: [\(secondResult!)]"
+                // UI must be used from main thread only
+                DispatchQueue.main.async {
+                    self.resultsTextView.text = resultsSummary
+                    self.startButton.isEnabled = true
+                    self.spinner.stopAnimating()
+                }
+                let endTime = Date()
+                print("Completed in \(endTime.timeIntervalSince(startTime)) seconds")
+            }
         }
     }
     
