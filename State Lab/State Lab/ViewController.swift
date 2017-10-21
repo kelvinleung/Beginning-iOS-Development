@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     private var label: UILabel!
+    private var animate = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,10 @@ class ViewController: UIViewController {
         label.textAlignment = .center
         label.backgroundColor = .clear
         view.addSubview(label)
-        rotateLabelDown()
+        
+        let center = NotificationCenter.default
+        center.addObserver(self, selector: #selector(ViewController.applicationWillResignActive), name: Notification.Name.UIApplicationWillResignActive, object: nil)
+        center.addObserver(self, selector: #selector(ViewController.applicationDidBecomeActive), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
     }
     
     func rotateLabelDown() {
@@ -37,8 +41,21 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 0.5, animations: {
             self.label.transform = CGAffineTransform(rotationAngle: 0)
         }) { completed in
-            self.rotateLabelDown()
+            if self.animate {
+                self.rotateLabelDown()
+            }
         }
+    }
+    
+    @objc func applicationWillResignActive() {
+        print("VC: \(#function)")
+        animate = false
+    }
+    
+    @objc func applicationDidBecomeActive() {
+        print("VC: \(#function)")
+        animate = true
+        rotateLabelDown()
     }
     
 }
