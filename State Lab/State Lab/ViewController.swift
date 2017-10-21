@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     private var animate = false
     private var smiley: UIImage!
     private var smileyView: UIImageView!
+    private var index = 0
+    private var segmentedControl: UISegmentedControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +34,16 @@ class ViewController: UIViewController {
         smiley = UIImage(contentsOfFile: smileyPath)
         smileyView.image = smiley
         
+        segmentedControl = UISegmentedControl(items: ["One", "Two", "Three", "Four"])
+        segmentedControl.frame = CGRect(x: bounds.origin.x + 20, y: 50, width: bounds.size.width - 40, height: 30)
+        segmentedControl.addTarget(self, action: #selector(ViewController.selectionChanged(_:)), for: .valueChanged)
+        
+        index = UserDefaults.standard.integer(forKey: "index")
+        segmentedControl.selectedSegmentIndex = index
+        
         view.addSubview(label)
         view.addSubview(smileyView)
+        view.addSubview(segmentedControl)
         
         let center = NotificationCenter.default
         center.addObserver(self, selector: #selector(ViewController.applicationWillResignActive), name: Notification.Name.UIApplicationWillResignActive, object: nil)
@@ -75,6 +85,7 @@ class ViewController: UIViewController {
         print("VC: \(#function)")
         smiley = nil
         smileyView.image = nil
+        UserDefaults.standard.set(index, forKey: "index")
     }
     
     @objc func applicationWillEnterForeground() {
@@ -82,6 +93,10 @@ class ViewController: UIViewController {
         let smileyPath = Bundle.main.path(forResource: "smiley", ofType: "png")!
         smiley = UIImage(contentsOfFile: smileyPath)
         smileyView.image = smiley
+    }
+    
+    @objc func selectionChanged(_ sender: UISegmentedControl) {
+        index = segmentedControl.selectedSegmentIndex
     }
     
 }
