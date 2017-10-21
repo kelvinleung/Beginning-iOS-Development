@@ -12,21 +12,34 @@ class ViewController: UIViewController {
     
     private var label: UILabel!
     private var animate = false
+    private var smiley: UIImage!
+    private var smileyView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         let bounds = view.bounds
-        let labelFrame = bounds
+        let labelFrame = CGRect(origin: CGPoint(x: bounds.origin.x, y: bounds.midY - 50), size: CGSize(width: bounds.size.width, height: 100))
         label = UILabel(frame: labelFrame)
         label.font = UIFont(name: "Helvetica", size: 70)
         label.text = "Bazinga!"
         label.textAlignment = .center
         label.backgroundColor = .clear
+        
+        let smileyFrame = CGRect(x: bounds.midX - 42, y: bounds.midY / 2 - 42, width: 84, height: 84)
+        smileyView = UIImageView(frame: smileyFrame)
+        smileyView.contentMode = .center
+        let smileyPath = Bundle.main.path(forResource: "smiley", ofType: "png")!
+        smiley = UIImage(contentsOfFile: smileyPath)
+        smileyView.image = smiley
+        
         view.addSubview(label)
+        view.addSubview(smileyView)
         
         let center = NotificationCenter.default
         center.addObserver(self, selector: #selector(ViewController.applicationWillResignActive), name: Notification.Name.UIApplicationWillResignActive, object: nil)
         center.addObserver(self, selector: #selector(ViewController.applicationDidBecomeActive), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+        center.addObserver(self, selector: #selector(ViewController.applicationDidEnterBackground), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+        center.addObserver(self, selector: #selector(ViewController.applicationWillEnterForeground), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
     }
     
     func rotateLabelDown() {
@@ -56,6 +69,19 @@ class ViewController: UIViewController {
         print("VC: \(#function)")
         animate = true
         rotateLabelDown()
+    }
+    
+    @objc func applicationDidEnterBackground() {
+        print("VC: \(#function)")
+        smiley = nil
+        smileyView.image = nil
+    }
+    
+    @objc func applicationWillEnterForeground() {
+        print("VC: \(#function)")
+        let smileyPath = Bundle.main.path(forResource: "smiley", ofType: "png")!
+        smiley = UIImage(contentsOfFile: smileyPath)
+        smileyView.image = smiley
     }
     
 }
